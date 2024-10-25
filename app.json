@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "ranApp123",
-    "slug": "ranApp123",
+    "name": "HEALTHAPP",
+    "slug": "HEALTHAPP",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "HEALTHAPP",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
