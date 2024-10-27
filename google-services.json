@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "553654978225",
+    "project_id": "healthapp-d4564",
+    "storage_bucket": "healthapp-d4564.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553654978225:android:2c2eeb466f254303230490",
+        "android_client_info": {
+          "package_name": "com.siet.health"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-SwuSpwEbnmYetQRuUBgOk3vgdwHdnyM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

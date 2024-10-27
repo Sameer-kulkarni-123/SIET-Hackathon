@@ -4,7 +4,7 @@ import React from 'react'
 const notfound = () => {
   return (
     <View className="flex-1 justify-center items-center">
-      <Text>+not-found</Text>
+      <Text>404 Page Not Found</Text>
     </View>
   )
 }
