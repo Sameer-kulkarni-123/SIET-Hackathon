@@ -28,8 +28,9 @@ export default function Index() {
         
         if(response.user){
           await createProfile(response);
-          router.push("/(tabs)/home");
-          
+          router.push({
+            pathname: "/(tabs)/home",
+            params: forms});
         }
 
       }
