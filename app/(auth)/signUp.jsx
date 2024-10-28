@@ -4,10 +4,13 @@ import CustomButton from "../../components/CustomButton123";
 import FormField from "../../components/FormField123";
 import { useState } from "react";
 import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
-import db from '@react-native-firebase/database';
+import database from '@react-native-firebase/database';
 import { Alert } from 'react-native';
 
 export default function Index() {
+
+  const db = database();
+
 
   const [form, setform] = useState({
     email: '',
@@ -28,9 +31,7 @@ export default function Index() {
         
         if(response.user){
           await createProfile(response);
-          router.push({
-            pathname: "/(tabs)/home",
-            params: forms});
+          router.push("/(tabs)/home");
         }
 
       }
