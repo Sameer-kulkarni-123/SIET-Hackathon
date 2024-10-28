@@ -3,6 +3,10 @@ import { Text, TouchableOpacity, View, SafeAreaView, StatusBar } from "react-nat
 import CustomButton from "../../components/CustomButton123";
 import FormField from "../../components/FormField123";
 import { useState } from "react";
+import auth from '@react-native-firebase/auth';
+import { Alert } from 'react-native';
+
+
 
 export default function Index() {
 
@@ -11,8 +15,35 @@ export default function Index() {
     password: ''
   })
 
-  const submit = () => {
-    router.push("/(tabs)/home")
+  const [loadState, setloadState] = useState(false);
+
+  const submit = async () => {
+    if(form.email && form.password){
+      try{
+        setloadState(true)
+        const response = await auth().signInWithEmailAndPassword(
+          form.email,
+          form.password
+        );
+        if(response.user){
+          router.push("/(tabs)/home");
+        }
+      }
+      catch (error) {
+        setloadState(false)
+        console.error("Firebase error: ", error);
+        if (error.code === 'auth/invalid-email') {
+          Alert.alert("Invalid Email", "Please enter a valid email address.");
+        } else if (error.code === 'auth/weak-password') {
+          Alert.alert("Weak Password", "Password should be at least 6 characters.");
+        } else if (error.code === 'auth/email-already-in-use') {
+          Alert.alert("Email In Use", "This email is already associated with an account.");
+        } else {
+          Alert.alert("Oops", "Please try again.");
+        }
+      }
+    }
+
   }
 
   return (
@@ -51,6 +82,7 @@ export default function Index() {
           title="Sign In"
           containerStyles="bg-[#816EB4] rounded-2xl"
           textStyles="px-7 py-4 text-2xl font-rmedium"
+          isLoading={loadState}
         />
         <View className="flex-row mt-5">
           <Text className="font-rregular text-[16px]">Don't have a account? </Text>

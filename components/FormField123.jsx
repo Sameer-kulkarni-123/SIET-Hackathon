@@ -15,7 +15,7 @@ const FormField123 = ({title, value, containerStyles, handleChangeText, placeHol
           placeholder={placeHolder}
           placeholderTextColor="white"
           onChangeText={handleChangeText}
-          secureTextEntry={title==="Password"?true:false}
+          secureTextEntry={title==="Password" || title==="Confirm Password"?true:false}
           keyboardType={keyboardType}
 
           />

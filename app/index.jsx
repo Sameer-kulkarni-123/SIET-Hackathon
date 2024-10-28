@@ -6,6 +6,16 @@ import CustomButton from '../components/CustomButton123'
 const index = () => {
   return (
     <SafeAreaView className="flex-1 justify-center items-center">
+      <View>
+      <CustomButton
+          title="pass"
+          containerStyles="rounded-2xl bg-[#816EB4]"
+          textStyles="px-7 py-6 text-xl font-rmedium"
+          handlePress={()=>{
+            router.push("/(tabs)/home");
+          }}
+        />
+      </View>
       <View className="absolute bottom-[150px]">
         <CustomButton
           title="Continue to sign in"

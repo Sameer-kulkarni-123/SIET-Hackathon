@@ -8,7 +8,8 @@ const CustomButton = ({title, containerStyles, textStyles, handlePress, isLoadin
   return (
     <TouchableOpacity
       onPress={handlePress}
-      className={`${containerStyles} `}
+      className={`${containerStyles} ${isLoading?"opacity-10":""}`}
+      disabled={isLoading}
 
     >
       <Text className={`${textStyles}`}>
